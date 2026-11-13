@@ -42,6 +42,7 @@ console.log(`Updated description, topics and collaboration settings for ${reposi
 const protections = [
   ['Private vulnerability reporting', () => api('PUT', '/private-vulnerability-reporting')],
   ['Dependabot alerts', () => api('PUT', '/vulnerability-alerts')],
+  ['Dependabot security updates', () => api('PUT', '/automated-security-fixes')],
   ['Secret scanning and push protection', () => api('PATCH', '', {
     security_and_analysis: {
       secret_scanning: { status: 'enabled' },
@@ -65,6 +66,10 @@ const privateReports = JSON.parse(api('GET', '/private-vulnerability-reporting')
 if (!privateReports.enabled) { failed = true; console.error('Private vulnerability reporting was not confirmed') }
 try { api('GET', '/vulnerability-alerts') }
 catch (error) { failed = true; console.error(`Dependabot alert verification: ${error.message}`) }
+try {
+  const updates = JSON.parse(api('GET', '/automated-security-fixes'))
+  if (!updates.enabled || updates.paused) throw new Error('Security updates are disabled or paused')
+} catch (error) { failed = true; console.error(`Dependabot security-update verification: ${error.message}`) }
 for (const name of ['secret_scanning', 'secret_scanning_push_protection']) {
   if (verified.security_and_analysis?.[name]?.status !== 'enabled') {
     failed = true; console.error(`${name} was not confirmed enabled`)

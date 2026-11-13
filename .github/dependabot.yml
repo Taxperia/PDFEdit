@@ -5,9 +5,14 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    allow:
+      - dependency-type: all
+        update-types:
+          - version-update:semver-minor
+          - version-update:semver-patch
     groups:
-      development-dependencies:
-        dependency-type: development
+      npm-minor-and-patch:
+        patterns: ["*"]
         update-types:
           - minor
           - patch
@@ -16,3 +21,14 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    allow:
+      - dependency-type: all
+        update-types:
+          - version-update:semver-minor
+          - version-update:semver-patch
+    groups:
+      actions-minor-and-patch:
+        patterns: ["*"]
+        update-types:
+          - minor
+          - patch

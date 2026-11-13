@@ -37,12 +37,12 @@ Review the staged files before publishing. `public/` is served to everyone; it m
 `npm run github:configure` uses the authenticated CLI to:
 
 - apply the English description, topics and collaboration settings from `.github/repository.json`;
-- enable private vulnerability reporting, Dependabot alerts, secret scanning and push protection;
+- enable private vulnerability reporting, Dependabot alerts/security updates, secret scanning and push protection;
 - read settings back and fail if required metadata or protections cannot be confirmed.
 
 It does not create repositories, change visibility or push source. Permissions and account availability may affect security settings; inspect any reported error rather than treating a partial configuration as complete. See [GitHub's private reporting guide](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/configure-for-a-repository).
 
-The CodeQL workflow scans JavaScript/TypeScript on pushes and pull requests to `main`. Dependabot checks npm and GitHub Actions updates weekly. These configurations take effect after GitHub receives the files. Do not enable a separate default CodeQL setup while the advanced workflow is in use.
+The CodeQL workflow scans JavaScript/TypeScript on pushes and pull requests to `main`. Dependabot checks npm and GitHub Actions updates weekly and groups minor/patch version updates. Major version migrations require a separate compatibility review. The version-update restriction does not disable security updates. These configurations take effect after GitHub receives the files. Do not enable a separate default CodeQL setup while the advanced workflow is in use.
 
 ## Verify the uploaded repository
 
