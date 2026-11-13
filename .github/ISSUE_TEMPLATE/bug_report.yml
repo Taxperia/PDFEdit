@@ -1,0 +1,51 @@
+name: Bug report
+description: Report a reproducible PDFEdit problem.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please use English and search existing issues first. Do not attach confidential PDFs or personal data.
+        Report vulnerabilities privately using SECURITY.md, not this form.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and whether it affects preview, export, or both.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the sample PDF
+        2. Select ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: 0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and operating system
+      placeholder: Browser name/version and operating system/version
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence
+      description: Screenshots, redacted console errors, or a generated sample PDF. Never include confidential document contents, credentials or personal paths.

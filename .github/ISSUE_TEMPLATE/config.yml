@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability privately
+    url: https://github.com/Taxperia/PDFEdit/security/advisories/new
+    about: Do not publish vulnerability details in an issue. See SECURITY.md for fallback contact options.
+  - name: Usage and support
+    url: https://github.com/Taxperia/PDFEdit/blob/main/SUPPORT.md
+    about: Read usage guidance and known limitations before reporting a problem.

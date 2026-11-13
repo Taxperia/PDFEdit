@@ -1,0 +1,42 @@
+{
+  "name": "pdfedit",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A privacy-focused browser PDF editor. Edit text, add shapes and images, and export PDFs locally without uploading your files.",
+  "repository": { "type": "git", "url": "git+https://github.com/Taxperia/PDFEdit.git" },
+  "bugs": { "url": "https://github.com/Taxperia/PDFEdit/issues" },
+  "homepage": "https://github.com/Taxperia/PDFEdit#readme",
+  "keywords": ["pdf-editor", "pdf", "client-side", "privacy", "react", "typescript", "vite", "pdfjs", "pdf-lib", "noncommercial"],
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "engines": { "node": ">=22.12.0" },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run licenses && tsc --noEmit && vite build",
+    "licenses": "node scripts/collectLicenses.mjs",
+    "github:configure": "node scripts/configureGithub.mjs",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.tests.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm test && npm run build",
+    "preview": "vite preview",
+    "gen:sample": "node scripts/genSample.mjs"
+  },
+  "dependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.10.38",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.4.6",
+    "vitest": "^5.1.0"
+  }
+}

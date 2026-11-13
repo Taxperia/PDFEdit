@@ -1,0 +1,19 @@
+{
+  "name": "PDFEdit",
+  "owner": "Taxperia",
+  "visibility": "public",
+  "description": "A privacy-focused browser PDF editor. Edit text, add shapes and images, and export PDFs locally without uploading your files.",
+  "homepage": "https://github.com/Taxperia/PDFEdit#readme",
+  "topics": [
+    "pdf-editor", "pdf", "document-editor", "browser-based", "client-side",
+    "privacy", "typescript", "react", "vite", "pdfjs", "pdf-lib", "zustand",
+    "internationalization", "noncommercial"
+  ],
+  "has_issues": true,
+  "has_wiki": false,
+  "has_projects": false,
+  "delete_branch_on_merge": true,
+  "allow_squash_merge": true,
+  "allow_merge_commit": false,
+  "allow_rebase_merge": false
+}
